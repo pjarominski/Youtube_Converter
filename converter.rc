@@ -1,0 +1,4 @@
+# converter.rc
+OUTPUT_DIR="$HOME/Desktop"
+TYPE="video"
+DEFAULT_URL="https://www.youtube.com/watch?v=dQw4w9WgXcQ"

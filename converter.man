@@ -1,0 +1,59 @@
+.TH CONVERTER.SH 1 "czerwiec 2025" "Wersja 1.0" "Manual użytkownika"
+.SH NAZWA
+converter.sh \- Skrypt do pobierania multimediów z YouTube i podobnych serwisów.
+
+.SH SKŁADNIA
+.B converter.sh
+[\fB\-v\fR]
+[\fB\-h\fR]
+
+.SH OPIS
+Skrypt \fBconverter.sh\fR umożliwia pobieranie materiałów audio i wideo z serwisów internetowych takich jak YouTube za pomocą narzędzia \fByt-dlp\fR. Użytkownik wybiera typ pliku do pobrania (audio lub wideo), wskazuje adres URL oraz katalog docelowy. Operacja odbywa się przy pomocy graficznego interfejsu Zenity.
+
+.SH OPCJE
+.TP
+\fB\-v\fR
+Wyświetla informację o wersji oraz autorze skryptu.
+
+.TP
+\fB\-h\fR
+Wyświetla pomoc z podstawowym opisem użycia.
+
+.SH DZIAŁANIE
+Po uruchomieniu skryptu:
+.IP "1." 4
+Użytkownik zostaje poproszony o podanie adresu URL materiału.
+.IP "2." 4
+Wybiera typ pobieranego pliku: audio (MP3) lub wideo (MP4).
+.IP "3." 4
+Wskazuje katalog, do którego plik zostanie zapisany.
+.IP "4." 4
+Proces pobierania przebiega w tle, a postęp pokazywany jest w oknie Zenity.
+
+.SH PLIK KONFIGURACYJNY
+Skrypt korzysta z pliku konfiguracyjnego \fBconverter.rc\fR, który powinien znajdować się w tym samym katalogu co skrypt.
+
+Plik może zawierać:
+.RS
+.nf
+OUTPUT_DIR="\fIścieżka_domowa_użytkownika\fR/Desktop"
+TYPE="video"
+DEFAULT_URL="https://adres.domyślny"
+.fi
+.RE
+
+.SH DANE TYMCZASOWE
+Skrypt tworzy tymczasowy katalog w \fB/tmp\fR do przechowywania logów i informacji o przebiegu pobierania. Dane te są usuwane automatycznie po zakończeniu działania.
+
+.SH ZALEŻNOŚCI
+Do poprawnego działania wymagane są następujące programy:
+.TP
+\fByt-dlp\fR – narzędzie do pobierania multimediów z Internetu.
+.TP
+\fBzenity\fR – narzędzie do wyświetlania graficznych okien dialogowych w środowisku X.
+
+.SH AUTOR
+Patryk Jaromiński
+
+.SH LICENCJA
+Ten skrypt udostępniany jest na licencji MIT.
